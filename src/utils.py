@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from datetime import date, datetime, timezone
 from typing import List, Optional
 
+
 def configure_logging() -> None:
     logging.basicConfig(
         level=logging.INFO,
@@ -33,12 +34,12 @@ class IpoItem:
     link_url: Optional[str]
 
     def uid(self) -> str:
-        symbol_or_slug = (self.symbol or slugify(self.company_name))
+        symbol_or_slug = self.symbol or slugify(self.company_name)
         ymd = self.expected_date.strftime("%Y%m%d") if self.expected_date else "tbd"
         return f"ipo-{symbol_or_slug}-{ymd}@nasdaq-ipo"
 
     def summary(self) -> str:
-        base = f"{self.symbol} IPO" if self.symbol else "IPO"
+        base = f"[IPO]{self.symbol}" if self.symbol else "IPO"
         return f"{base} – {self.company_name}"
 
 
@@ -53,7 +54,7 @@ class EarningsItem:
     link_url: Optional[str]
 
     def uid(self) -> str:
-        symbol_or_slug = (self.symbol or slugify(self.company_name))
+        symbol_or_slug = self.symbol or slugify(self.company_name)
         ymd = self.report_date.strftime("%Y%m%d") if self.report_date else "tbd"
         return f"earnings-{symbol_or_slug}-{ymd}@nasdaq-earnings"
 
@@ -64,12 +65,12 @@ class EarningsItem:
         while the combined feed continues to use the category-prefixed UID to
         avoid any ambiguity across mixed event types.
         """
-        symbol_or_slug = (self.symbol or slugify(self.company_name))
+        symbol_or_slug = self.symbol or slugify(self.company_name)
         ymd = self.report_date.strftime("%Y%m%d") if self.report_date else "tbd"
         return f"{symbol_or_slug}-{ymd}@nasdaq-earnings"
 
     def summary(self) -> str:
-        base = f"Earnings – {self.symbol}" if self.symbol else "Earnings"
+        base = f"[ERN]{self.symbol}" if self.symbol else "Earnings"
         return f"{base} – {self.company_name}"
 
 

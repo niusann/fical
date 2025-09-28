@@ -21,8 +21,8 @@ def fold_line(line: str, limit: int = 75) -> List[str]:
     folded: List[str] = [line[:limit]]
     rest = line[limit:]
     while rest:
-        folded.append(" " + rest[:limit - 1])
-        rest = rest[limit - 1:]
+        folded.append(" " + rest[: limit - 1])
+        rest = rest[limit - 1 :]
     return folded
 
 
@@ -186,7 +186,7 @@ def build_combined_calendar(
             lines.extend(event_lines)
 
     for item in earnings_items:
-        event_lines = build_earnings_vevent(item, now, summary_prefix="[EARNINGS] ")
+        event_lines = build_earnings_vevent(item, now, summary_prefix="[ERN] ")
         if event_lines:
             lines.extend(event_lines)
 

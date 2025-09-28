@@ -76,7 +76,7 @@ python -m src.main
 Outputs:
 - `dist/ipo.ics` – IPO calendar feed
 - `dist/earnings.ics` – Earnings calendar feed
-- `dist/all.ics` – Combined feed (IPO + Earnings). Event titles are prefixed with `[IPO]` or `[EARNINGS]`.
+- `dist/all.ics` – Combined feed (IPO + Earnings). Event titles are prefixed with `[IPO]` or `[ERN]`.
 - `data/ipo.json` – latest IPO JSON snapshots (debugging)
 - `data/earnings.json` – latest Earnings JSON snapshots (debugging)
 - `data/archive/ipo/YYYY-MM-DD.json` – IPO snapshots by date
