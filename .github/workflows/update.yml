@@ -38,18 +38,45 @@ jobs:
         run: |
           python -m src.main
 
-      - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v3
+      - name: Prepare feed repo checkout
+        uses: actions/checkout@v4
         with:
-          path: dist
+          repository: ${{ secrets.FEED_REPO }}
+          ref: ${{ secrets.FEED_BRANCH }}
+          path: feed-repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy ICS into feed repo
+        run: |
+          cp -f dist/nasdaq-ipo.ics feed-repo/nasdaq-ipo.ics
+
+      - name: Configure git user
+        working-directory: feed-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes if any
+        id: commit
+        working-directory: feed-repo
+        run: |
+          if git status --porcelain | grep -q "."; then
+            git add nasdaq-ipo.ics
+            git commit -m "chore: update ICS $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push changes
+        if: steps.commit.outputs.changed == 'true'
+        working-directory: feed-repo
+        run: |
+          git push origin ${{ secrets.FEED_BRANCH }}
 
   deploy:
     needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: noop
+        run: echo "Deployment handled via public feed repo Pages."
