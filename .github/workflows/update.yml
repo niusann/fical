@@ -8,7 +8,7 @@ on:
   workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -19,6 +19,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      is_public: ${{ steps.vis.outputs.public }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,51 +40,41 @@ jobs:
         run: |
           python -m src.main
 
-      - name: Start SSH agent and add deploy key
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.FEED_DEPLOY_KEY }}
-
-      - name: Prepare feed repo checkout
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ secrets.FEED_REPO }}
-          ref: ${{ secrets.FEED_BRANCH }}
-          path: feed-repo
-          ssh-key: ${{ secrets.FEED_DEPLOY_KEY }}
-          persist-credentials: false
-
-      - name: Copy ICS into feed repo
+      - name: Check repository visibility
+        id: vis
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
-          cp -f dist/nasdaq-ipo.ics feed-repo/nasdaq-ipo.ics
-
-      - name: Configure git user
-        working-directory: feed-repo
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - name: Commit changes if any
-        id: commit
-        working-directory: feed-repo
-        run: |
-          if git status --porcelain | grep -q "."; then
-            git add nasdaq-ipo.ics
-            git commit -m "chore: update ICS $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            echo "changed=true" >> $GITHUB_OUTPUT
+          is_private=$(gh api repos/$REPO -q .private)
+          if [ "$is_private" = "false" ]; then
+            echo "public=true" >> $GITHUB_OUTPUT
           else
-            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "public=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Push changes
-        if: steps.commit.outputs.changed == 'true'
-        working-directory: feed-repo
-        run: |
-          git push origin ${{ secrets.FEED_BRANCH }}
+      - name: Upload artifact for Pages
+        if: steps.vis.outputs.public == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
   deploy:
     needs: build
+    if: needs.build.outputs.is_public == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: noop
-        run: echo "Deployment handled via public feed repo Pages."
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  noop-deploy:
+    needs: build
+    if: needs.build.outputs.is_public != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip deploy on private repo
+        run: echo "Repo is private; skipping Pages deploy."
