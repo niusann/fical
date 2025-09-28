@@ -14,7 +14,7 @@ from .fetch import (
     fetch_nasdaq_earnings_json_for_day,
 )
 from .transform import normalize_from_json, normalize_from_html_rows, normalize_earnings_from_json
-from .build_ics import build_calendar, build_earnings_calendar
+from .build_ics import build_calendar, build_earnings_calendar, build_combined_calendar
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DIST_DIR = Path(__file__).resolve().parent.parent / "dist"
@@ -134,8 +134,15 @@ def main() -> int:
     with earnings_ics_path.open("w", encoding="utf-8", newline="") as f:
         f.write(earnings_ics)
 
+    # Build combined ICS with prefixed summaries for disambiguation
+    all_ics = build_combined_calendar(items, earnings_items)
+    all_ics_path = DIST_DIR / "all.ics"
+    with all_ics_path.open("w", encoding="utf-8", newline="") as f:
+        f.write(all_ics)
+
     logging.info("Generated %s with %d events", ics_path, len(items))
     logging.info("Generated %s with %d events", earnings_ics_path, len(earnings_items))
+    logging.info("Generated %s with %d events", all_ics_path, len(items) + len(earnings_items))
     return 0
 
 

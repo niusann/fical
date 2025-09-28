@@ -30,7 +30,7 @@ def format_all_day(d: date) -> str:
     return d.strftime("%Y%m%d")
 
 
-def build_vevent(item: IpoItem, now: datetime) -> List[str]:
+def build_vevent(item: IpoItem, now: datetime, summary_prefix: str = "") -> List[str]:
     if item.expected_date is None:
         return []
     dtstamp = now.strftime("%Y%m%dT%H%M%SZ")
@@ -54,7 +54,7 @@ def build_vevent(item: IpoItem, now: datetime) -> List[str]:
         f"DTSTAMP:{dtstamp}",
         f"DTSTART;VALUE=DATE:{dtstart}",
         f"DTEND;VALUE=DATE:{dtend}",
-        f"SUMMARY:{ical_escape(item.summary())}",
+        f"SUMMARY:{ical_escape(summary_prefix + item.summary())}",
     ]
     if description:
         lines.append(f"DESCRIPTION:{description}")
@@ -92,7 +92,7 @@ def build_calendar(items: Iterable[IpoItem]) -> str:
     return "\r\n".join(lines) + "\r\n"
 
 
-def build_earnings_vevent(item: EarningsItem, now: datetime) -> List[str]:
+def build_earnings_vevent(item: EarningsItem, now: datetime, summary_prefix: str = "") -> List[str]:
     if item.report_date is None:
         return []
     dtstamp = now.strftime("%Y%m%dT%H%M%SZ")
@@ -114,7 +114,7 @@ def build_earnings_vevent(item: EarningsItem, now: datetime) -> List[str]:
         f"DTSTAMP:{dtstamp}",
         f"DTSTART;VALUE=DATE:{dtstart}",
         f"DTEND;VALUE=DATE:{dtend}",
-        f"SUMMARY:{ical_escape(item.summary())}",
+        f"SUMMARY:{ical_escape(summary_prefix + item.summary())}",
     ]
     if description:
         lines.append(f"DESCRIPTION:{description}")
@@ -144,6 +144,42 @@ def build_earnings_calendar(items: Iterable[EarningsItem]) -> str:
 
     for item in items:
         event_lines = build_earnings_vevent(item, now)
+        if event_lines:
+            lines.extend(event_lines)
+
+    lines.append("END:VCALENDAR")
+
+    return "\r\n".join(lines) + "\r\n"
+
+
+def build_combined_calendar(
+    ipo_items: Iterable[IpoItem],
+    earnings_items: Iterable[EarningsItem],
+) -> str:
+    """Build a single VCALENDAR containing both IPO and Earnings events.
+
+    Prefixes event summaries with markers so they are distinguishable when
+    subscribing to the combined feed.
+    """
+    now = utc_now()
+    lines: List[str] = [
+        "BEGIN:VCALENDAR",
+        "PRODID:-//fical//nasdaq-all//EN",
+        "VERSION:2.0",
+        "CALSCALE:GREGORIAN",
+        "NAME:Nasdaq IPOs & Earnings",
+        "X-WR-CALNAME:Nasdaq IPOs & Earnings",
+        "REFRESH-INTERVAL;VALUE=DURATION:P1D",
+        "X-PUBLISHED-TTL:P1D",
+    ]
+
+    for item in ipo_items:
+        event_lines = build_vevent(item, now, summary_prefix="[IPO] ")
+        if event_lines:
+            lines.extend(event_lines)
+
+    for item in earnings_items:
+        event_lines = build_earnings_vevent(item, now, summary_prefix="[EARNINGS] ")
         if event_lines:
             lines.extend(event_lines)
 
