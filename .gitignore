@@ -1,16 +1,15 @@
-# OS/macOS
-.DS_Store
-
-# Python
 __pycache__/
 *.py[cod]
-
-# venv
+*.egg-info/
 .venv/
+.env
+.DS_Store
+.idea/
+.vscode/
 
-# Build artifacts
-/dist/
+# Build outputs
+dist/*.ics
 
-# Temporary repos and keys
-.tmp-feed/
+# Local deploy keys and temp repos
 .deploy_key*
+.tmp-feed/

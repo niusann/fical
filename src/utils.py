@@ -3,12 +3,8 @@ from __future__ import annotations
 import json
 import logging
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta, timezone
-from typing import Iterable, List, Optional
-
-
-ISO_DATE_FMT = "%Y-%m-%d"
-
+from datetime import date, datetime, timezone
+from typing import List, Optional
 
 def configure_logging() -> None:
     logging.basicConfig(

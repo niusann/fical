@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-import os
 from datetime import date
 from typing import Any, Dict, List, Optional
 
@@ -23,7 +22,6 @@ DEFAULT_HEADERS = {
 def get_http_session() -> requests.Session:
     session = requests.Session()
     session.headers.update(DEFAULT_HEADERS)
-    session.timeout = 20
     return session
 
 
@@ -34,7 +32,7 @@ def fetch_nasdaq_json_for_month(session: requests.Session, month_start: date) ->
     ym = f"{month_start.year:04d}-{month_start.month:02d}"
     url = f"https://api.nasdaq.com/api/ipo/calendar?date={ym}"
     try:
-        r = session.get(url)
+        r = session.get(url, timeout=20)
         if r.status_code != 200:
             logging.warning("JSON fetch non-200: %s", r.status_code)
             return None
@@ -58,7 +56,7 @@ def fetch_nasdaq_earnings_json_for_month(session: requests.Session, month_start:
     ym = f"{month_start.year:04d}-{month_start.month:02d}"
     url = f"https://api.nasdaq.com/api/calendar/earnings?date={ym}"
     try:
-        r = session.get(url)
+        r = session.get(url, timeout=20)
         if r.status_code != 200:
             logging.warning("Earnings JSON fetch non-200: %s", r.status_code)
             return None
@@ -80,7 +78,11 @@ def fetch_nasdaq_earnings_json_for_day(session: requests.Session, day: date) -> 
     ymd = f"{day.year:04d}-{day.month:02d}-{day.day:02d}"
     url = f"https://api.nasdaq.com/api/calendar/earnings?date={ymd}"
     try:
-        r = session.get(url, headers={"Referer": "https://www.nasdaq.com/market-activity/earnings"})
+        r = session.get(
+            url,
+            headers={"Referer": "https://www.nasdaq.com/market-activity/earnings"},
+            timeout=20,
+        )
         if r.status_code != 200:
             logging.debug("Earnings daily JSON non-200 for %s: %s", ymd, r.status_code)
             return None
@@ -96,7 +98,11 @@ def fetch_nasdaq_earnings_json_for_day(session: requests.Session, day: date) -> 
 def fetch_nasdaq_html_calendar(session: requests.Session) -> Optional[str]:
     try:
         url = "https://www.nasdaq.com/market-activity/ipos"
-        r = session.get(url, headers={"Accept": "text/html,application/xhtml+xml"})
+        r = session.get(
+            url,
+            headers={"Accept": "text/html,application/xhtml+xml"},
+            timeout=20,
+        )
         if r.status_code != 200:
             logging.warning("HTML fetch non-200: %s", r.status_code)
             return None
