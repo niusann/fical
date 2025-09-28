@@ -44,7 +44,8 @@ jobs:
           repository: ${{ secrets.FEED_REPO }}
           ref: ${{ secrets.FEED_BRANCH }}
           path: feed-repo
-          token: ${{ secrets.GITHUB_TOKEN }}
+          ssh-key: ${{ secrets.FEED_DEPLOY_KEY }}
+          persist-credentials: false
 
       - name: Copy ICS into feed repo
         run: |
