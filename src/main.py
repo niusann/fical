@@ -39,6 +39,9 @@ def main() -> int:
     configure_logging()
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     (DATA_DIR / "archive").mkdir(parents=True, exist_ok=True)
+    # Separate archive subdirectories for IPO and Earnings
+    (DATA_DIR / "archive" / "ipo").mkdir(parents=True, exist_ok=True)
+    (DATA_DIR / "archive" / "earnings").mkdir(parents=True, exist_ok=True)
     DIST_DIR.mkdir(parents=True, exist_ok=True)
 
     session = get_http_session()
@@ -107,19 +110,19 @@ def main() -> int:
     items.sort(key=lambda i: (i.expected_date or date.max, i.company_name))
     earnings_items.sort(key=lambda e: (e.report_date or date.max, e.company_name))
 
-    # Write latest JSON snapshot for debugging
-    latest_path = DATA_DIR / "latest.json"
+    # Write latest JSON snapshots
+    latest_path = DATA_DIR / "ipo.json"
     with latest_path.open("w", encoding="utf-8") as f:
         f.write(json_dump_pretty(json_snapshots))
-    latest_earnings_path = DATA_DIR / "latest-earnings.json"
+    latest_earnings_path = DATA_DIR / "earnings.json"
     with latest_earnings_path.open("w", encoding="utf-8") as f:
         f.write(json_dump_pretty(earnings_snapshots))
 
-    # Optionally archive by date
-    archive_path = DATA_DIR / "archive" / f"{today_utc().isoformat()}.json"
+    # Archive by date in separate subdirectories
+    archive_path = DATA_DIR / "archive" / "ipo" / f"{today_utc().isoformat()}.json"
     with archive_path.open("w", encoding="utf-8") as f:
         f.write(json_dump_pretty(json_snapshots))
-    archive_earnings_path = DATA_DIR / "archive" / f"earnings-{today_utc().isoformat()}.json"
+    archive_earnings_path = DATA_DIR / "archive" / "earnings" / f"{today_utc().isoformat()}.json"
     with archive_earnings_path.open("w", encoding="utf-8") as f:
         f.write(json_dump_pretty(earnings_snapshots))
 

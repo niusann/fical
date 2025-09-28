@@ -32,9 +32,10 @@ python -m src.main
 Outputs:
 - `dist/ipo.ics` – IPO calendar feed
 - `dist/earnings.ics` – Earnings calendar feed
-- `data/latest.json` – latest IPO JSON snapshots (debugging)
-- `data/latest-earnings.json` – latest Earnings JSON snapshots (debugging)
-- `data/archive/*.json` – dated snapshots (includes `earnings-YYYY-MM-DD.json`)
+- `data/ipo.json` – latest IPO JSON snapshots (debugging)
+- `data/earnings.json` – latest Earnings JSON snapshots (debugging)
+- `data/archive/ipo/YYYY-MM-DD.json` – IPO snapshots by date
+- `data/archive/earnings/YYYY-MM-DD.json` – Earnings snapshots by date
 
 ## Notes
 - This project makes minimal requests (once/day) and sets a browser-like User-Agent.
