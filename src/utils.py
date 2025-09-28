@@ -57,6 +57,17 @@ class EarningsItem:
         ymd = self.report_date.strftime("%Y%m%d") if self.report_date else "tbd"
         return f"earnings-{symbol_or_slug}-{ymd}@nasdaq-earnings"
 
+    def uid_without_category_prefix(self) -> str:
+        """Return a stable UID without the leading 'earnings-' category prefix.
+
+        This is used for the standalone earnings feed to keep identifiers concise,
+        while the combined feed continues to use the category-prefixed UID to
+        avoid any ambiguity across mixed event types.
+        """
+        symbol_or_slug = (self.symbol or slugify(self.company_name))
+        ymd = self.report_date.strftime("%Y%m%d") if self.report_date else "tbd"
+        return f"{symbol_or_slug}-{ymd}@nasdaq-earnings"
+
     def summary(self) -> str:
         base = f"Earnings – {self.symbol}" if self.symbol else "Earnings"
         return f"{base} – {self.company_name}"

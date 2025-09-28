@@ -92,7 +92,12 @@ def build_calendar(items: Iterable[IpoItem]) -> str:
     return "\r\n".join(lines) + "\r\n"
 
 
-def build_earnings_vevent(item: EarningsItem, now: datetime, summary_prefix: str = "") -> List[str]:
+def build_earnings_vevent(
+    item: EarningsItem,
+    now: datetime,
+    summary_prefix: str = "",
+    use_bare_uid: bool = False,
+) -> List[str]:
     if item.report_date is None:
         return []
     dtstamp = now.strftime("%Y%m%dT%H%M%SZ")
@@ -108,9 +113,11 @@ def build_earnings_vevent(item: EarningsItem, now: datetime, summary_prefix: str
         description_parts.append(f"EPS Actual: {item.eps_actual}")
     description = ical_escape("\n".join(description_parts)) if description_parts else ""
 
+    uid_value = item.uid_without_category_prefix() if use_bare_uid else item.uid()
+
     lines: List[str] = [
         "BEGIN:VEVENT",
-        f"UID:{item.uid()}",
+        f"UID:{uid_value}",
         f"DTSTAMP:{dtstamp}",
         f"DTSTART;VALUE=DATE:{dtstart}",
         f"DTEND;VALUE=DATE:{dtend}",
@@ -143,7 +150,7 @@ def build_earnings_calendar(items: Iterable[EarningsItem]) -> str:
     ]
 
     for item in items:
-        event_lines = build_earnings_vevent(item, now)
+        event_lines = build_earnings_vevent(item, now, use_bare_uid=True)
         if event_lines:
             lines.extend(event_lines)
 
