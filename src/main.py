@@ -76,7 +76,7 @@ def main() -> int:
 
     # Build ICS
     ics = build_calendar(items)
-    ics_path = DIST_DIR / "nasdaq-ipo.ics"
+    ics_path = DIST_DIR / "ipo.ics"
     with ics_path.open("w", encoding="utf-8", newline="") as f:
         f.write(ics)
 

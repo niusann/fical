@@ -7,7 +7,7 @@ Generates an iCalendar (ICS) feed of Nasdaq IPOs and publishes it daily via GitH
 The calendar is published via a public feed repo:
 
 ```
-https://niusann.github.io/fical/nasdaq-ipo.ics
+https://niusann.github.io/fical/ipo.ics
 ```
 
 Subscribe using the URL above in Google Calendar, Apple Calendar, or Outlook.
@@ -16,7 +16,7 @@ Subscribe using the URL above in Google Calendar, Apple Calendar, or Outlook.
 
 - Fetches Nasdaq IPO data (JSON API where available; falls back to HTML parsing).
 - Normalizes entries and generates an all-day VEVENT for each IPO date.
-- Publishes `dist/nasdaq-ipo.ics` to GitHub Pages daily at 08:00 UTC.
+- Publishes `dist/ipo.ics` to GitHub Pages daily at 08:00 UTC.
 
 ## Local development
 
@@ -28,7 +28,7 @@ python -m src.main
 ```
 
 Outputs:
-- `dist/nasdaq-ipo.ics` – the calendar feed
+- `dist/ipo.ics` – the calendar feed
 - `data/latest.json` – latest fetched JSON payloads (for debugging)
 
 ## Notes
