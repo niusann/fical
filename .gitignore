@@ -1,7 +1,16 @@
-.venv/
-__pycache__/
-*.pyc
+# OS/macOS
 .DS_Store
-.env
-.idea/
-.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# venv
+.venv/
+
+# Build artifacts
+/dist/
+
+# Temporary repos and keys
+.tmp-feed/
+.deploy_key*
