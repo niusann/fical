@@ -1,6 +1,8 @@
 name: Update IPO ICS
 
 on:
+  push:
+    branches: [ master, main ]
   schedule:
     - cron: "0 8 * * *"  # daily at 08:00 UTC
   workflow_dispatch: {}
