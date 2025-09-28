@@ -4,11 +4,13 @@ Generates an iCalendar (ICS) feed of Nasdaq IPOs and publishes it daily via GitH
 
 ## Subscription URL
 
-After Pages is enabled for this repo, the calendar will be available at:
+The calendar is published via a public feed repo:
 
 ```
-https://<your-username>.github.io/<repo>/nasdaq-ipo.ics
+https://wayou.github.io/fical-ipo-feed/nasdaq-ipo.ics
 ```
+
+Subscribe using the URL above in Google Calendar, Apple Calendar, or Outlook.
 
 ## How it works
 
