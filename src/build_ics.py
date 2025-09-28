@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import date, datetime, timedelta, timezone
 from typing import Iterable, List
 
-from .utils import IpoItem, utc_now
+from .utils import IpoItem, EarningsItem, utc_now
 
 
 def ical_escape(text: str) -> str:
@@ -84,6 +84,66 @@ def build_calendar(items: Iterable[IpoItem]) -> str:
 
     for item in items:
         event_lines = build_vevent(item, now)
+        if event_lines:
+            lines.extend(event_lines)
+
+    lines.append("END:VCALENDAR")
+
+    return "\r\n".join(lines) + "\r\n"
+
+
+def build_earnings_vevent(item: EarningsItem, now: datetime) -> List[str]:
+    if item.report_date is None:
+        return []
+    dtstamp = now.strftime("%Y%m%dT%H%M%SZ")
+    dtstart = item.report_date.strftime("%Y%m%d")
+    dtend = (item.report_date + timedelta(days=1)).strftime("%Y%m%d")
+
+    description_parts: List[str] = []
+    if item.time_of_day:
+        description_parts.append(f"Time: {item.time_of_day}")
+    if item.eps_consensus:
+        description_parts.append(f"EPS Consensus: {item.eps_consensus}")
+    if item.eps_actual:
+        description_parts.append(f"EPS Actual: {item.eps_actual}")
+    description = ical_escape("\n".join(description_parts)) if description_parts else ""
+
+    lines: List[str] = [
+        "BEGIN:VEVENT",
+        f"UID:{item.uid()}",
+        f"DTSTAMP:{dtstamp}",
+        f"DTSTART;VALUE=DATE:{dtstart}",
+        f"DTEND;VALUE=DATE:{dtend}",
+        f"SUMMARY:{ical_escape(item.summary())}",
+    ]
+    if description:
+        lines.append(f"DESCRIPTION:{description}")
+    if item.link_url:
+        lines.append(f"URL:{ical_escape(item.link_url)}")
+    lines.append("CATEGORIES:EARNINGS")
+    lines.append("END:VEVENT")
+
+    folded: List[str] = []
+    for line in lines:
+        folded.extend(fold_line(line))
+    return folded
+
+
+def build_earnings_calendar(items: Iterable[EarningsItem]) -> str:
+    now = utc_now()
+    lines: List[str] = [
+        "BEGIN:VCALENDAR",
+        "PRODID:-//fical//nasdaq-earnings//EN",
+        "VERSION:2.0",
+        "CALSCALE:GREGORIAN",
+        "NAME:Nasdaq Earnings",
+        "X-WR-CALNAME:Nasdaq Earnings",
+        "REFRESH-INTERVAL;VALUE=DURATION:P1D",
+        "X-PUBLISHED-TTL:P1D",
+    ]
+
+    for item in items:
+        event_lines = build_earnings_vevent(item, now)
         if event_lines:
             lines.extend(event_lines)
 

@@ -48,6 +48,51 @@ def fetch_nasdaq_json_for_month(session: requests.Session, month_start: date) ->
         return None
 
 
+def fetch_nasdaq_earnings_json_for_month(session: requests.Session, month_start: date) -> Optional[Dict[str, Any]]:
+    """Fetch Nasdaq earnings calendar JSON for a given month.
+
+    The endpoint format has changed historically; this keeps the same style as IPO fetch.
+    Example (subject to change):
+      https://api.nasdaq.com/api/calendar/earnings?date=2025-09
+    """
+    ym = f"{month_start.year:04d}-{month_start.month:02d}"
+    url = f"https://api.nasdaq.com/api/calendar/earnings?date={ym}"
+    try:
+        r = session.get(url)
+        if r.status_code != 200:
+            logging.warning("Earnings JSON fetch non-200: %s", r.status_code)
+            return None
+        data = r.json()
+        if not isinstance(data, dict):
+            return None
+        return data
+    except Exception as exc:
+        logging.warning("Earnings JSON fetch failed for %s: %s", month_start, exc)
+        return None
+
+
+def fetch_nasdaq_earnings_json_for_day(session: requests.Session, day: date) -> Optional[Dict[str, Any]]:
+    """Fetch Nasdaq earnings calendar JSON for a given day (UTC date).
+
+    Endpoint typically expects a YYYY-MM-DD date string.
+    Example: https://api.nasdaq.com/api/calendar/earnings?date=2025-09-28
+    """
+    ymd = f"{day.year:04d}-{day.month:02d}-{day.day:02d}"
+    url = f"https://api.nasdaq.com/api/calendar/earnings?date={ymd}"
+    try:
+        r = session.get(url, headers={"Referer": "https://www.nasdaq.com/market-activity/earnings"})
+        if r.status_code != 200:
+            logging.debug("Earnings daily JSON non-200 for %s: %s", ymd, r.status_code)
+            return None
+        data = r.json()
+        if not isinstance(data, dict):
+            return None
+        return data
+    except Exception as exc:
+        logging.debug("Earnings daily JSON fetch failed for %s: %s", ymd, exc)
+        return None
+
+
 def fetch_nasdaq_html_calendar(session: requests.Session) -> Optional[str]:
     try:
         url = "https://www.nasdaq.com/market-activity/ipos"

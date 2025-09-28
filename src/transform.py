@@ -6,7 +6,7 @@ from typing import Any, Dict, Iterable, List, Optional
 
 from dateutil import parser as dateparser
 
-from .utils import IpoItem
+from .utils import IpoItem, EarningsItem
 
 
 def parse_date_safe(value: Optional[str]) -> Optional[date]:
@@ -113,4 +113,85 @@ def normalize_from_html_rows(rows: List[Dict[str, Any]]) -> List[IpoItem]:
                 link_url=url,
             )
         )
+    return items
+
+
+def normalize_earnings_from_json(month_payload: Dict[str, Any]) -> List[EarningsItem]:
+    """Normalize Nasdaq earnings JSON month payload to EarningsItem list.
+
+    Current observed structures vary by date and API version. We try to be permissive.
+    Common patterns:
+      data.rows[] with fields like: symbol, companyname, date, time, epsconsensus, epsactual, url
+      or deeply nested under data.calendar.rows[]
+    """
+    items: List[EarningsItem] = []
+    if not isinstance(month_payload, dict):
+        return items
+    data = month_payload.get("data") or month_payload
+    if not isinstance(data, dict):
+        return items
+
+    # Fallback date (for daily endpoints rows without explicit date)
+    fallback_date: Optional[date] = None
+    asof_value = data.get("asOf")
+    if isinstance(asof_value, str):
+        maybe_dt = parse_date_safe(asof_value)
+        if maybe_dt:
+            fallback_date = maybe_dt
+
+    # Try a few likely structures
+    candidate_lists: List[Optional[List[Dict[str, Any]]]] = []
+    if isinstance(data.get("calendar"), dict) and isinstance(data["calendar"].get("rows"), list):
+        candidate_lists.append(data["calendar"]["rows"])  # type: ignore[index]
+    if isinstance(data.get("rows"), list):
+        candidate_lists.append(data.get("rows"))  # type: ignore[arg-type]
+    if isinstance(data.get("upcoming"), dict) and isinstance(data["upcoming"].get("rows"), list):
+        candidate_lists.append(data["upcoming"]["rows"])  # type: ignore[index]
+
+    rows: List[Dict[str, Any]] = []
+    for lst in candidate_lists:
+        if isinstance(lst, list):
+            rows.extend([r for r in lst if isinstance(r, dict)])
+
+    def get_str(d: Dict[str, Any], *keys: str) -> Optional[str]:
+        for k in keys:
+            v = d.get(k)
+            if v is not None:
+                s = str(v).strip()
+                return s if s else None
+        return None
+
+    for row in rows:
+        company = get_str(row, "companyname", "company", "name")
+        symbol = get_str(row, "symbol", "ticker")
+        dt_str = get_str(row, "date", "reportdate", "earningsdate")
+        tod = get_str(row, "time", "timeofday", "timeOfDay")
+        # Common naming variants
+        eps_c = get_str(row, "epsconsensus", "eps_consensus", "epsConsensus", "epsForecast")
+        eps_a = get_str(row, "epsactual", "eps_actual", "epsActual", "eps")
+        url = get_str(row, "url", "link", "href")
+        parsed_date = parse_date_safe(dt_str)
+        if parsed_date is None:
+            parsed_date = fallback_date
+
+        time_clean = None
+        if tod:
+            t = tod.strip().lower()
+            if t == "time-not-supplied":
+                time_clean = "TBD"
+            elif t in {"bmo", "amc"}:
+                time_clean = t.upper()
+            else:
+                time_clean = tod
+
+        items.append(EarningsItem(
+            company_name=str(company or "Unknown Company"),
+            symbol=str(symbol) if symbol else None,
+            report_date=parsed_date,
+            time_of_day=time_clean,
+            eps_consensus=str(eps_c) if eps_c else None,
+            eps_actual=str(eps_a) if eps_a else None,
+            link_url=str(url) if url else None,
+        ))
+
     return items

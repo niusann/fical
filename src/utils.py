@@ -46,6 +46,26 @@ class IpoItem:
         return f"{base} – {self.company_name}"
 
 
+@dataclass(frozen=True)
+class EarningsItem:
+    company_name: str
+    symbol: Optional[str]
+    report_date: Optional[date]
+    time_of_day: Optional[str]
+    eps_consensus: Optional[str]
+    eps_actual: Optional[str]
+    link_url: Optional[str]
+
+    def uid(self) -> str:
+        symbol_or_slug = (self.symbol or slugify(self.company_name))
+        ymd = self.report_date.strftime("%Y%m%d") if self.report_date else "tbd"
+        return f"earnings-{symbol_or_slug}-{ymd}@nasdaq-earnings"
+
+    def summary(self) -> str:
+        base = f"Earnings – {self.symbol}" if self.symbol else "Earnings"
+        return f"{base} – {self.company_name}"
+
+
 def slugify(value: str) -> str:
     allowed = [c.lower() if c.isalnum() else "-" for c in value]
     slug = "".join(allowed)
