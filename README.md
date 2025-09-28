@@ -6,10 +6,17 @@ Generates iCalendar (ICS) feeds of Nasdaq IPOs and Earnings and publishes them d
 
 Published via a public feed repo:
 
+### IPO-only feed
 ```
-https://niusann.github.io/fical/ipo.ics      # IPO-only feed
-https://niusann.github.io/fical/earnings.ics  # Earnings-only feed
-https://niusann.github.io/fical/all.ics       # Combined feed
+https://niusann.github.io/fical/ipo.ics      
+```
+### Earnings-only feed
+```
+https://niusann.github.io/fical/earnings.ics  
+```
+### Combined feed
+```
+https://niusann.github.io/fical/all.ics       
 ```
 
 Subscribe to either or both in Google Calendar, Apple Calendar, or Outlook.
