@@ -51,7 +51,7 @@ def build_vevent(item: IpoItem, now: datetime, summary_prefix: str = "") -> List
         description_parts.append(f"Exchange: {item.exchange}")
     # Append app deep link at the end, if we have a symbol
     if item.symbol:
-        description_parts.append(f"stock://{item.symbol}")
+        description_parts.append(f"stocks://?symbol={item.symbol}")
     description = ical_escape("\n".join(description_parts)) if description_parts else ""
 
     lines: List[str] = [
@@ -120,7 +120,7 @@ def build_earnings_vevent(
     if item.eps_actual:
         description_parts.append(f"EPS Actual: {item.eps_actual}")
     if item.symbol:
-        description_parts.append(f"stock://{item.symbol}")
+        description_parts.append(f"stocks://?symbol={item.symbol}")
     description = ical_escape("\n".join(description_parts)) if description_parts else ""
 
     uid_value = item.uid_without_category_prefix() if use_bare_uid else item.uid()
