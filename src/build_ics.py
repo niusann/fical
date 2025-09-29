@@ -38,6 +38,9 @@ def build_vevent(item: IpoItem, now: datetime, summary_prefix: str = "") -> List
     dtend = format_all_day(item.expected_date + timedelta(days=1))
 
     description_parts: List[str] = []
+    # Enrich details: include symbol if available
+    if item.symbol:
+        description_parts.append(f"Symbol: {item.symbol}")
     if item.status:
         description_parts.append(f"Status: {item.status}")
     if item.price_range:
@@ -46,6 +49,9 @@ def build_vevent(item: IpoItem, now: datetime, summary_prefix: str = "") -> List
         description_parts.append(f"Deal Size: {item.deal_size}")
     if item.exchange:
         description_parts.append(f"Exchange: {item.exchange}")
+    # Append app deep link at the end, if we have a symbol
+    if item.symbol:
+        description_parts.append(f"stock://{item.symbol}")
     description = ical_escape("\n".join(description_parts)) if description_parts else ""
 
     lines: List[str] = [
@@ -105,12 +111,16 @@ def build_earnings_vevent(
     dtend = (item.report_date + timedelta(days=1)).strftime("%Y%m%d")
 
     description_parts: List[str] = []
+    if item.symbol:
+        description_parts.append(f"Symbol: {item.symbol}")
     if item.time_of_day:
         description_parts.append(f"Time: {item.time_of_day}")
     if item.eps_consensus:
         description_parts.append(f"EPS Consensus: {item.eps_consensus}")
     if item.eps_actual:
         description_parts.append(f"EPS Actual: {item.eps_actual}")
+    if item.symbol:
+        description_parts.append(f"stock://{item.symbol}")
     description = ical_escape("\n".join(description_parts)) if description_parts else ""
 
     uid_value = item.uid_without_category_prefix() if use_bare_uid else item.uid()
