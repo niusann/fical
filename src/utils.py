@@ -39,7 +39,7 @@ class IpoItem:
         return f"ipo-{symbol_or_slug}-{ymd}@nasdaq-ipo"
 
     def summary(self) -> str:
-        base = f"[IPO]{self.symbol}" if self.symbol else "IPO"
+        base = self.symbol if self.symbol else "IPO"
         return f"{base} – {self.company_name}"
 
 
@@ -70,7 +70,7 @@ class EarningsItem:
         return f"{symbol_or_slug}-{ymd}@nasdaq-earnings"
 
     def summary(self) -> str:
-        base = f"[ERN]{self.symbol}" if self.symbol else "Earnings"
+        base = self.symbol if self.symbol else "Earnings"
         return f"{base} – {self.company_name}"
 
 

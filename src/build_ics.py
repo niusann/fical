@@ -89,7 +89,7 @@ def build_calendar(items: Iterable[IpoItem]) -> str:
     ]
 
     for item in items:
-        event_lines = build_vevent(item, now)
+        event_lines = build_vevent(item, now, summary_prefix="[IPO] ")
         if event_lines:
             lines.extend(event_lines)
 
@@ -160,7 +160,12 @@ def build_earnings_calendar(items: Iterable[EarningsItem]) -> str:
     ]
 
     for item in items:
-        event_lines = build_earnings_vevent(item, now, use_bare_uid=True)
+        event_lines = build_earnings_vevent(
+            item,
+            now,
+            summary_prefix="[ERN] ",
+            use_bare_uid=True,
+        )
         if event_lines:
             lines.extend(event_lines)
 
