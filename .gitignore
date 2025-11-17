@@ -8,7 +8,7 @@ __pycache__/
 .vscode/
 
 # Build outputs
-dist/*.ics
+dist/
 
 # Local deploy keys and temp repos
 .deploy_key*

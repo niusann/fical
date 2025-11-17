@@ -1,5 +1,5 @@
 {
-  "2025-09": {
+  "2025-11": {
     "data": {
       "filed": {
         "asOf": null,
@@ -11,379 +11,134 @@
         },
         "rows": [
           {
-            "companyName": "Seahawk Recycling Holdings, Inc.",
-            "dealID": "1350464-115476",
-            "dollarValueOfSharesOffered": "$13,800,000",
-            "filedDate": "9/25/2025",
-            "proposedTickerSymbol": "SEAH"
-          },
-          {
-            "companyName": "Exzeo Group, Inc.",
-            "dealID": "1185994-115466",
-            "dollarValueOfSharesOffered": "$100,000,000.00",
-            "filedDate": "9/25/2025",
-            "proposedTickerSymbol": "XZO"
-          },
-          {
-            "companyName": "PressLogic Inc.",
-            "dealID": "1350194-115462",
-            "dollarValueOfSharesOffered": "$11,500,000",
-            "filedDate": "9/24/2025",
-            "proposedTickerSymbol": "PLAI"
-          },
-          {
-            "companyName": "Lafayette Digital Acquisition Corp. I",
-            "dealID": "1350026-115449",
-            "dollarValueOfSharesOffered": "$287,500,000",
-            "filedDate": "9/23/2025",
-            "proposedTickerSymbol": "ZKPU"
-          },
-          {
-            "companyName": "Climate Transition Special Opportunities SPAC I",
-            "dealID": "1349892-115439",
-            "dollarValueOfSharesOffered": "$172,500,000",
-            "filedDate": "9/23/2025",
-            "proposedTickerSymbol": "CLSOU"
-          },
-          {
-            "companyName": "Creative Future Acquisition Corp",
-            "dealID": "1349773-115430",
-            "dollarValueOfSharesOffered": "$69,000,000",
-            "filedDate": "9/22/2025",
-            "proposedTickerSymbol": "CFACU"
-          },
-          {
-            "companyName": "CSC Collective Holdings Ltd",
-            "dealID": "1349771-115429",
-            "dollarValueOfSharesOffered": "$8,625,000",
-            "filedDate": "9/22/2025",
-            "proposedTickerSymbol": "CSC"
-          },
-          {
-            "companyName": "Andersen Group Inc.",
-            "dealID": "1349642-115416",
+            "companyName": "Grayscale Investments, Inc.",
+            "dealID": "1356188-116012",
             "dollarValueOfSharesOffered": "$100,000,000",
-            "filedDate": "9/19/2025",
-            "proposedTickerSymbol": "ANDG"
+            "filedDate": "11/13/2025",
+            "proposedTickerSymbol": "GRAY"
           },
           {
-            "companyName": "SPACSphere Acquisition Corp.",
-            "dealID": "1349641-115415",
-            "dollarValueOfSharesOffered": "$172,500,000",
-            "filedDate": "9/19/2025",
-            "proposedTickerSymbol": "SSACU"
-          },
-          {
-            "companyName": "BITGO HOLDINGS, INC.",
-            "dealID": "1054194-115411",
-            "dollarValueOfSharesOffered": "$100,000,000",
-            "filedDate": "9/19/2025",
-            "proposedTickerSymbol": "BTGO"
-          },
-          {
-            "companyName": "MapLight Therapeutics, Inc.",
-            "dealID": "1079674-115403",
-            "dollarValueOfSharesOffered": "$100,000,000",
-            "filedDate": "9/19/2025",
-            "proposedTickerSymbol": "MPLT"
-          },
-          {
-            "companyName": "Navan, Inc.",
-            "dealID": "964927-115399",
-            "dollarValueOfSharesOffered": "$100,000,000",
-            "filedDate": "9/19/2025",
-            "proposedTickerSymbol": "NAVN"
-          },
-          {
-            "companyName": "Ga Sai Tong Enterprise Ltd",
-            "dealID": "1349592-115398",
-            "dollarValueOfSharesOffered": "$9,100,000",
-            "filedDate": "9/19/2025",
-            "proposedTickerSymbol": "GST"
-          },
-          {
-            "companyName": "JOSS Realty REIT, Inc.",
-            "dealID": "1349503-115395",
-            "dollarValueOfSharesOffered": "$15,000,000",
-            "filedDate": "9/19/2025",
-            "proposedTickerSymbol": "JOSS"
-          },
-          {
-            "companyName": "Silicon Valley Acquisition Corp.",
-            "dealID": "1349502-115393",
-            "dollarValueOfSharesOffered": "$230,000,000",
-            "filedDate": "9/18/2025",
-            "proposedTickerSymbol": "SVAQU"
-          },
-          {
-            "companyName": "K2 Capital Acquisition Corp",
-            "dealID": "1349426-115383",
+            "companyName": "Subversive Bitcoin Acquisition Corp.",
+            "dealID": "1356178-116008",
             "dollarValueOfSharesOffered": "$115,000,000",
-            "filedDate": "9/18/2025",
-            "proposedTickerSymbol": "KIIU"
+            "filedDate": "11/13/2025",
+            "proposedTickerSymbol": "SBAQU"
           },
           {
-            "companyName": "Guident Corp.",
-            "dealID": "1349348-115380",
-            "dollarValueOfSharesOffered": "$17,250,000",
-            "filedDate": "9/18/2025",
-            "proposedTickerSymbol": "GDNT"
+            "companyName": "Feitu Shanglian Cloud Information Technology Co., Ltd",
+            "dealID": "1355997-115998",
+            "dollarValueOfSharesOffered": "$1,000,000",
+            "filedDate": "11/12/2025",
+            "proposedTickerSymbol": "FTY"
           },
           {
-            "companyName": "Yuanxiang Acquisition Corp.",
-            "dealID": "1349217-115375",
-            "dollarValueOfSharesOffered": "$100,000,000",
-            "filedDate": "9/17/2025",
-            "proposedTickerSymbol": "YXCA"
-          },
-          {
-            "companyName": "X3 Acquisition Corp. Ltd.",
-            "dealID": "1349120-115365",
-            "dollarValueOfSharesOffered": "$230,000,000",
-            "filedDate": "9/16/2025",
-            "proposedTickerSymbol": "XCBEU"
-          },
-          {
-            "companyName": "Global Development Engineering Co Ltd",
-            "dealID": "1349097-115363",
-            "dollarValueOfSharesOffered": "$18,750,000",
-            "filedDate": "9/16/2025",
-            "proposedTickerSymbol": "GDEL"
-          },
-          {
-            "companyName": "WeShop Holdings Ltd",
-            "dealID": "1349007-115355",
-            "dollarValueOfSharesOffered": "$38,592,862.76",
-            "filedDate": "9/15/2025",
-            "proposedTickerSymbol": "WSHP"
-          },
-          {
-            "companyName": "QuasarEdge Acquisition Corp",
-            "dealID": "1348936-115335",
-            "dollarValueOfSharesOffered": "$69,000,000.00",
-            "filedDate": "9/15/2025",
-            "proposedTickerSymbol": "QREDU"
-          },
-          {
-            "companyName": "Encore Medical, Inc.",
-            "dealID": "1139366-115332",
-            "dollarValueOfSharesOffered": "$17,250,000",
-            "filedDate": "9/15/2025",
-            "proposedTickerSymbol": "EMI"
-          },
-          {
-            "companyName": "AMATUHI HOLDINGS, INC.",
-            "dealID": "1348932-115333",
-            "dollarValueOfSharesOffered": "$6,900,000",
-            "filedDate": "9/15/2025",
-            "proposedTickerSymbol": "AMTU"
-          },
-          {
-            "companyName": "ANGIE HOLDINGS Ltd",
-            "dealID": "1348900-115328",
-            "dollarValueOfSharesOffered": "$10,350,000",
-            "filedDate": "9/12/2025",
-            "proposedTickerSymbol": null
-          },
-          {
-            "companyName": "Shreya Acquisition Group",
-            "dealID": "1348894-115324",
-            "dollarValueOfSharesOffered": "$69,000,000",
-            "filedDate": "9/12/2025",
-            "proposedTickerSymbol": null
-          },
-          {
-            "companyName": "Alliance Laundry Holdings Inc.",
-            "dealID": "664330-115317",
-            "dollarValueOfSharesOffered": "$100,000,000",
-            "filedDate": "9/12/2025",
-            "proposedTickerSymbol": "ALH"
-          },
-          {
-            "companyName": "RIKU DINING GROUP Ltd",
-            "dealID": "1348823-115314",
-            "dollarValueOfSharesOffered": "$15,525,000",
-            "filedDate": "9/12/2025",
-            "proposedTickerSymbol": "RIKU"
-          },
-          {
-            "companyName": "Lendbuzz Inc.",
-            "dealID": "1055422-115312",
-            "dollarValueOfSharesOffered": "$100,000,000",
-            "filedDate": "9/12/2025",
-            "proposedTickerSymbol": "LBZZ"
-          },
-          {
-            "companyName": "QDRO Acquisition Corp.",
-            "dealID": "1348766-115309",
-            "dollarValueOfSharesOffered": "$230,000,000",
-            "filedDate": "9/12/2025",
-            "proposedTickerSymbol": "QADRU"
-          },
-          {
-            "companyName": "SunHo BioTech Group Ltd",
-            "dealID": "1348669-115301",
-            "dollarValueOfSharesOffered": "$11,500,000",
-            "filedDate": "9/11/2025",
-            "proposedTickerSymbol": null
-          },
-          {
-            "companyName": "Meshflow Acquisition Corp",
-            "dealID": "1348594-115293",
-            "dollarValueOfSharesOffered": "$345,000,000",
-            "filedDate": "9/10/2025",
-            "proposedTickerSymbol": null
-          },
-          {
-            "companyName": "Daedalus Special Acquisition Corp.",
-            "dealID": "1348582-115290",
-            "dollarValueOfSharesOffered": "$230,000,000",
-            "filedDate": "9/10/2025",
-            "proposedTickerSymbol": "DSACU"
-          },
-          {
-            "companyName": "Bain Capital GSS Investment Corp.",
-            "dealID": "1348407-115268",
-            "dollarValueOfSharesOffered": "$460,000,000",
-            "filedDate": "9/09/2025",
-            "proposedTickerSymbol": "BCSSU"
-          },
-          {
-            "companyName": "HAMA Intelligence Ltd",
-            "dealID": "1348374-115266",
-            "dollarValueOfSharesOffered": "$8,855,000",
-            "filedDate": "9/09/2025",
-            "proposedTickerSymbol": "HAMA"
-          },
-          {
-            "companyName": "Range Capital Acquisition Corp II",
-            "dealID": "1348322-115261",
-            "dollarValueOfSharesOffered": "$230,000,000",
-            "filedDate": "9/08/2025",
-            "proposedTickerSymbol": "RNGTU"
-          },
-          {
-            "companyName": "Ultratrex Inc.",
-            "dealID": "1348230-115249",
+            "companyName": "THAI YEE HONG TECHNOLOGY HOLDINGS PTE LTD",
+            "dealID": "1355923-115988",
             "dollarValueOfSharesOffered": "$7,187,500",
-            "filedDate": "9/08/2025",
-            "proposedTickerSymbol": "UTX"
+            "filedDate": "11/12/2025",
+            "proposedTickerSymbol": "TYHT"
           },
           {
-            "companyName": "EvoNexus Group LTD",
-            "dealID": "1348215-115247",
-            "dollarValueOfSharesOffered": "$9,200,000",
-            "filedDate": "9/08/2025",
-            "proposedTickerSymbol": "EVON"
+            "companyName": "TRIBECA STRATEGIC ACQUISITION CORP.",
+            "dealID": "1355893-115981",
+            "dollarValueOfSharesOffered": "$201,250,000",
+            "filedDate": "11/10/2025",
+            "proposedTickerSymbol": "BIDWU"
           },
           {
-            "companyName": "Barentsz Capital Ltd",
-            "dealID": "1348203-115246",
-            "dollarValueOfSharesOffered": "$5,250,000",
-            "filedDate": "9/08/2025",
-            "proposedTickerSymbol": "BRKK"
+            "companyName": "Launchpad Cadenza Acquisition Corp I",
+            "dealID": "1355883-115977",
+            "dollarValueOfSharesOffered": "$230,000,000",
+            "filedDate": "11/10/2025",
+            "proposedTickerSymbol": "LPCVU"
           },
           {
-            "companyName": "Fermi LLC",
-            "dealID": "1348115-115241",
-            "dollarValueOfSharesOffered": "$632,500,000",
-            "filedDate": "9/08/2025",
-            "proposedTickerSymbol": "FRMI"
+            "companyName": "Klook Technology Ltd",
+            "dealID": "1355802-115971",
+            "dollarValueOfSharesOffered": "$100,000,000",
+            "filedDate": "11/10/2025",
+            "proposedTickerSymbol": "KLK"
           },
           {
-            "companyName": "FutureCrest Acquisition Corp.",
-            "dealID": "1348110-115239",
+            "companyName": "Braiin Ltd",
+            "dealID": "1355786-115970",
+            "dollarValueOfSharesOffered": "",
+            "filedDate": "11/10/2025",
+            "proposedTickerSymbol": "BRAI"
+          },
+          {
+            "companyName": "Terra H Inc",
+            "dealID": "1355780-115969",
+            "dollarValueOfSharesOffered": "$5,000,000",
+            "filedDate": "11/10/2025",
+            "proposedTickerSymbol": "CYCE"
+          },
+          {
+            "companyName": "Activate Energy Acquisition Corp.",
+            "dealID": "1355759-115968",
+            "dollarValueOfSharesOffered": "$230,000,000",
+            "filedDate": "11/10/2025",
+            "proposedTickerSymbol": "AEAQU"
+          },
+          {
+            "companyName": "Launchpad Streetlight Acquisition Corp",
+            "dealID": "1355708-115950",
+            "dollarValueOfSharesOffered": "$230,000,000",
+            "filedDate": "11/07/2025",
+            "proposedTickerSymbol": "LPSLU"
+          },
+          {
+            "companyName": "HCM IV Acquisition Corp.",
+            "dealID": "1355602-115940",
             "dollarValueOfSharesOffered": "$287,500,000",
-            "filedDate": "9/05/2025",
-            "proposedTickerSymbol": "FCRSU"
+            "filedDate": "11/07/2025",
+            "proposedTickerSymbol": "HACQU"
           },
           {
-            "companyName": "Optimi Health Corp.",
-            "dealID": "1300457-115237",
-            "dollarValueOfSharesOffered": "$25,000,000.00",
-            "filedDate": "9/05/2025",
-            "proposedTickerSymbol": "OPTH"
+            "companyName": "ARC Group Securities Acquisition II",
+            "dealID": "1355580-115938",
+            "dollarValueOfSharesOffered": "$172,500,000",
+            "filedDate": "11/06/2025",
+            "proposedTickerSymbol": "FDARU"
           },
           {
-            "companyName": "SMJ International Holdings Inc.",
-            "dealID": "1348088-115230",
+            "companyName": "Bluerock Acquisition Corp.",
+            "dealID": "1355579-115936",
+            "dollarValueOfSharesOffered": "$172,500,000",
+            "filedDate": "11/06/2025",
+            "proposedTickerSymbol": "BLRKU"
+          },
+          {
+            "companyName": "Speed Group Holdings Ltd",
+            "dealID": "1355518-115927",
             "dollarValueOfSharesOffered": "$14,375,000",
-            "filedDate": "9/05/2025",
-            "proposedTickerSymbol": null
+            "filedDate": "11/06/2025",
+            "proposedTickerSymbol": "SPED"
           },
           {
-            "companyName": "LORENZO DEVELOPMENTS INC.",
-            "dealID": "1348083-115226",
-            "dollarValueOfSharesOffered": "$13,800,000",
-            "filedDate": "9/05/2025",
-            "proposedTickerSymbol": "LCDC"
+            "companyName": "ARC Group Securities Acquisition I",
+            "dealID": "1355452-115919",
+            "dollarValueOfSharesOffered": "$172,500,000",
+            "filedDate": "11/06/2025",
+            "proposedTickerSymbol": "FJDIU"
           },
           {
-            "companyName": "LaFayette Acquisition Corp.",
-            "dealID": "1347976-115222",
-            "dollarValueOfSharesOffered": "$115,000,000",
-            "filedDate": "9/05/2025",
-            "proposedTickerSymbol": "LAFAU"
+            "companyName": "Safeguard Acquisition Corp.",
+            "dealID": "1355419-115918",
+            "dollarValueOfSharesOffered": "$230,000,000",
+            "filedDate": "11/06/2025",
+            "proposedTickerSymbol": "SAC'U"
           },
           {
-            "companyName": "Leapfrog Acquisition Corp",
-            "dealID": "1347943-115211",
-            "dollarValueOfSharesOffered": "$143,750,000",
-            "filedDate": "9/04/2025",
-            "proposedTickerSymbol": null
-          },
-          {
-            "companyName": "Nihon Shintatsu Co., Ltd.",
-            "dealID": "1347865-115208",
-            "dollarValueOfSharesOffered": "$8,625,000",
-            "filedDate": "9/04/2025",
-            "proposedTickerSymbol": "JSTT"
-          },
-          {
-            "companyName": "OBOOK HOLDINGS INC.",
-            "dealID": "1347781-115204",
-            "dollarValueOfSharesOffered": "$47,296,950",
-            "filedDate": "9/03/2025",
-            "proposedTickerSymbol": "OWLS"
-          },
-          {
-            "companyName": "Kepler Group Ltd",
-            "dealID": "1347735-115196",
-            "dollarValueOfSharesOffered": "$9,660,000",
-            "filedDate": "9/03/2025",
-            "proposedTickerSymbol": "KPL"
-          },
-          {
-            "companyName": "Park Dental Partners, Inc.",
-            "dealID": "1347699-115195",
-            "dollarValueOfSharesOffered": "$24,713,500",
-            "filedDate": "9/03/2025",
-            "proposedTickerSymbol": "PARK"
-          },
-          {
-            "companyName": "Neptune Insurance Holdings Inc.",
-            "dealID": "1334803-115190",
-            "dollarValueOfSharesOffered": "$423,684,200",
-            "filedDate": "9/03/2025",
-            "proposedTickerSymbol": "NP"
-          },
-          {
-            "companyName": "Miluna Acquisition Corp",
-            "dealID": "1347479-115170",
-            "dollarValueOfSharesOffered": "$69,000,000",
-            "filedDate": "9/02/2025",
-            "proposedTickerSymbol": "MMTXU"
-          },
-          {
-            "companyName": "Global Health Solutions, Inc",
-            "dealID": "1297116-115169",
-            "dollarValueOfSharesOffered": "$1,131,092.51",
-            "filedDate": "9/02/2025",
-            "proposedTickerSymbol": "TTRX"
+            "companyName": "Crane Harbor Acquisition Corp. II",
+            "dealID": "1355396-115914",
+            "dollarValueOfSharesOffered": "$287,500,000",
+            "filedDate": "11/05/2025",
+            "proposedTickerSymbol": "CRANU"
           }
         ]
       },
-      "month": 9,
+      "month": 11,
       "priced": {
         "asOf": null,
         "headers": {
@@ -398,285 +153,197 @@
         },
         "rows": [
           {
-            "companyName": "Emmis Acquisition Corp.",
-            "dealID": "1341126-114513",
+            "companyName": "Caring Brands, Inc.",
+            "dealID": "1293875-115056",
             "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$100,000,000",
-            "pricedDate": "9/25/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "EMISU",
-            "sharesOffered": "10,000,000"
-          },
-          {
-            "companyName": "Drugs Made In America Acquisition II Corp.",
-            "dealID": "1342770-114639",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$500,000,000",
-            "pricedDate": "9/25/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "DMIIU",
-            "sharesOffered": "50,000,000"
-          },
-          {
-            "companyName": "Pattern Group Inc.",
-            "dealID": "1117469-115184",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$300,000,008",
-            "pricedDate": "9/19/2025",
-            "proposedExchange": "NASDAQ Global Select",
-            "proposedSharePrice": "14.00",
-            "proposedTickerSymbol": "PTRN",
-            "sharesOffered": "21,428,572"
-          },
-          {
-            "companyName": "Platinum Analytics Cayman Ltd",
-            "dealID": "1334698-113902",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$8,000,000",
-            "pricedDate": "9/19/2025",
+            "dollarValueOfSharesOffered": "$4,000,000",
+            "pricedDate": "11/13/2025",
             "proposedExchange": "NASDAQ Capital",
             "proposedSharePrice": "4.00",
-            "proposedTickerSymbol": "PLTS",
-            "sharesOffered": "2,000,000"
+            "proposedTickerSymbol": "CABR",
+            "sharesOffered": "1,000,000"
           },
           {
-            "companyName": "Galata Acquisition Corp. II",
-            "dealID": "1346860-115097",
+            "companyName": "Phaos Technology (Cayman) Holdings Ltd",
+            "dealID": "1320224-112515",
             "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$150,000,000",
-            "pricedDate": "9/19/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "LATAU",
-            "sharesOffered": "15,000,000"
-          },
-          {
-            "companyName": "Netskope Inc",
-            "dealID": "1346651-115065",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$908,200,000",
-            "pricedDate": "9/18/2025",
-            "proposedExchange": "NASDAQ Global Select",
-            "proposedSharePrice": "19.00",
-            "proposedTickerSymbol": "NTSK",
-            "sharesOffered": "47,800,000"
-          },
-          {
-            "companyName": "WaterBridge Infrastructure LLC",
-            "dealID": "1346709-115084",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$634,000,000",
-            "pricedDate": "9/17/2025",
-            "proposedExchange": "NYSE",
-            "proposedSharePrice": "20.00",
-            "proposedTickerSymbol": "WBI",
-            "sharesOffered": "31,700,000"
-          },
-          {
-            "companyName": "StubHub Holdings, Inc.",
-            "dealID": "685255-113383",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$799,999,996",
-            "pricedDate": "9/17/2025",
-            "proposedExchange": "NYSE",
-            "proposedSharePrice": "23.50",
-            "proposedTickerSymbol": "STUB",
-            "sharesOffered": "34,042,553"
-          },
-          {
-            "companyName": "ChowChow Cloud International Holdings Ltd",
-            "dealID": "1330722-113496",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$10,400,000",
-            "pricedDate": "9/16/2025",
+            "dollarValueOfSharesOffered": "$14,400,360",
+            "pricedDate": "11/13/2025",
             "proposedExchange": "NYSE MKT",
             "proposedSharePrice": "4.00",
-            "proposedTickerSymbol": "CHOW",
-            "sharesOffered": "2,600,000"
+            "proposedTickerSymbol": "POAS",
+            "sharesOffered": "3,600,090"
           },
           {
-            "companyName": "Chenghe Acquisition III Co.",
-            "dealID": "1341117-114508",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$110,000,000",
-            "pricedDate": "9/16/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "CHECU",
-            "sharesOffered": "11,000,000"
-          },
-          {
-            "companyName": "Hang Feng Technology Innovation Co., Ltd.",
-            "dealID": "1335376-113984",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$5,500,000",
-            "pricedDate": "9/12/2025",
-            "proposedExchange": "NASDAQ Capital",
-            "proposedSharePrice": "4.00",
-            "proposedTickerSymbol": "FOFO",
-            "sharesOffered": "1,375,000"
-          },
-          {
-            "companyName": "Legence Corp.",
-            "dealID": "1345878-114978",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$728,000,000",
-            "pricedDate": "9/12/2025",
-            "proposedExchange": "NASDAQ Global Select",
-            "proposedSharePrice": "28.00",
-            "proposedTickerSymbol": "LGN",
-            "sharesOffered": "26,000,000"
-          },
-          {
-            "companyName": "Gemini Space Station, Inc.",
-            "dealID": "1345926-114998",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$425,000,016",
-            "pricedDate": "9/12/2025",
-            "proposedExchange": "NASDAQ Global Select",
-            "proposedSharePrice": "28.00",
-            "proposedTickerSymbol": "GEMI",
-            "sharesOffered": "15,178,572"
-          },
-          {
-            "companyName": "Black Rock Coffee Bar, Inc.",
-            "dealID": "1345991-115007",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$294,117,640",
-            "pricedDate": "9/12/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "20.00",
-            "proposedTickerSymbol": "BRCB",
-            "sharesOffered": "14,705,882"
-          },
-          {
-            "companyName": "Via Transportation, Inc.",
-            "dealID": "930671-114975",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$492,857,110",
-            "pricedDate": "9/12/2025",
-            "proposedExchange": "NYSE",
-            "proposedSharePrice": "46.00",
-            "proposedTickerSymbol": "VIA",
-            "sharesOffered": "10,714,285"
-          },
-          {
-            "companyName": "OTG Acquisition Corp. I",
-            "dealID": "1346725-115088",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$200,000,000",
-            "pricedDate": "9/12/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "OTGAU",
-            "sharesOffered": "20,000,000"
-          },
-          {
-            "companyName": "Figure Technology Solutions, Inc.",
-            "dealID": "1346063-115016",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$787,500,000",
-            "pricedDate": "9/11/2025",
-            "proposedExchange": "NASDAQ Global Select",
-            "proposedSharePrice": "25.00",
-            "proposedTickerSymbol": "FIGR",
-            "sharesOffered": "31,500,000"
-          },
-          {
-            "companyName": "LB PHARMACEUTICALS INC",
-            "dealID": "1010448-115077",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$285,000,000",
-            "pricedDate": "9/11/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "15.00",
-            "proposedTickerSymbol": "LBRX",
-            "sharesOffered": "19,000,000"
-          },
-          {
-            "companyName": "Klarna Group plc",
-            "dealID": "1280697-113320",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$1,372,450,960",
-            "pricedDate": "9/10/2025",
-            "proposedExchange": "NYSE",
-            "proposedSharePrice": "40.00",
-            "proposedTickerSymbol": "KLAR",
-            "sharesOffered": "34,311,274"
-          },
-          {
-            "companyName": "Trailblazer Acquisition Corp.",
-            "dealID": "1341933-114566",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$240,000,000",
-            "pricedDate": "9/10/2025",
-            "proposedExchange": "NASDAQ Global",
-            "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "BLZRU",
-            "sharesOffered": "24,000,000"
-          },
-          {
-            "companyName": "Talon Capital Corp.",
-            "dealID": "1345935-115001",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$225,000,000",
-            "pricedDate": "9/09/2025",
-            "proposedExchange": "NASDAQ Capital",
-            "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "TLNCU",
-            "sharesOffered": "22,500,000"
-          },
-          {
-            "companyName": "Zenta Group Co Ltd",
-            "dealID": "1320232-112519",
-            "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$6,000,000",
-            "pricedDate": "9/09/2025",
-            "proposedExchange": "NASDAQ Capital",
-            "proposedSharePrice": "4.00",
-            "proposedTickerSymbol": "ZGM",
-            "sharesOffered": "1,500,000"
-          },
-          {
-            "companyName": "Fitness Champs Holdings Ltd",
-            "dealID": "1307983-114031",
+            "companyName": "OFF THE HOOK YS INC.",
+            "dealID": "1341217-114519",
             "dealStatus": "Priced",
             "dollarValueOfSharesOffered": "$15,000,000",
-            "pricedDate": "9/04/2025",
-            "proposedExchange": "NASDAQ Capital",
+            "pricedDate": "11/13/2025",
+            "proposedExchange": "NYSE MKT",
             "proposedSharePrice": "4.00",
-            "proposedTickerSymbol": "FCHL",
+            "proposedTickerSymbol": "OTH",
             "sharesOffered": "3,750,000"
           },
           {
-            "companyName": "GSR IV Acquisition Corp.",
-            "dealID": "1343709-114734",
+            "companyName": "Alussa Energy Acquisition Corp. II",
+            "dealID": "1352406-115658",
             "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$200,000,000",
-            "pricedDate": "9/04/2025",
-            "proposedExchange": "NASDAQ Global",
+            "dollarValueOfSharesOffered": "$250,000,000",
+            "pricedDate": "11/13/2025",
+            "proposedExchange": "NYSE",
             "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "GSRFU",
-            "sharesOffered": "20,000,000"
+            "proposedTickerSymbol": "ALUBU",
+            "sharesOffered": "25,000,000"
           },
           {
-            "companyName": "Spring Valley Acquisition Corp. III",
-            "dealID": "1344596-114826",
+            "companyName": "Blueport Acquisition Ltd",
+            "dealID": "1340216-114430",
             "dealStatus": "Priced",
-            "dollarValueOfSharesOffered": "$200,000,000",
-            "pricedDate": "9/04/2025",
+            "dollarValueOfSharesOffered": "$50,000,000",
+            "pricedDate": "11/12/2025",
+            "proposedExchange": "NASDAQ Capital",
+            "proposedSharePrice": "10.00",
+            "proposedTickerSymbol": "BPACU",
+            "sharesOffered": "5,000,000"
+          },
+          {
+            "companyName": "Evolution Global Acquisition Corp",
+            "dealID": "1344075-114759",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$210,000,000",
+            "pricedDate": "11/11/2025",
             "proposedExchange": "NASDAQ Global",
             "proposedSharePrice": "10.00",
-            "proposedTickerSymbol": "SVACU",
-            "sharesOffered": "20,000,000"
+            "proposedTickerSymbol": "EVOXU",
+            "sharesOffered": "21,000,000"
+          },
+          {
+            "companyName": "Tailwind 2.0 Acquisition Corp.",
+            "dealID": "1345299-114942",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$150,000,000",
+            "pricedDate": "11/07/2025",
+            "proposedExchange": "NASDAQ Global",
+            "proposedSharePrice": "10.00",
+            "proposedTickerSymbol": "TDWDU",
+            "sharesOffered": "15,000,000"
+          },
+          {
+            "companyName": "Crown Reserve Acquisition Corp. I",
+            "dealID": "1337380-114158",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$150,000,000",
+            "pricedDate": "11/07/2025",
+            "proposedExchange": "NASDAQ Global",
+            "proposedSharePrice": "10.00",
+            "proposedTickerSymbol": "CRACU",
+            "sharesOffered": "15,000,000"
+          },
+          {
+            "companyName": "Evommune, Inc.",
+            "dealID": "1320384-115644",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$150,000,000",
+            "pricedDate": "11/06/2025",
+            "proposedExchange": "NYSE",
+            "proposedSharePrice": "16.00",
+            "proposedTickerSymbol": "EVMN",
+            "sharesOffered": "9,375,000"
+          },
+          {
+            "companyName": "Grupo Aeromexico, S.A.B. de C.V.",
+            "dealID": "1296149-110137",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$222,819,175",
+            "pricedDate": "11/06/2025",
+            "proposedExchange": "NYSE",
+            "proposedSharePrice": "19.00",
+            "proposedTickerSymbol": "AERO",
+            "sharesOffered": "11,727,325"
+          },
+          {
+            "companyName": "BillionToOne, Inc.",
+            "dealID": "1351958-115627",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$273,066,000",
+            "pricedDate": "11/06/2025",
+            "proposedExchange": "NASDAQ Global Select",
+            "proposedSharePrice": "60.00",
+            "proposedTickerSymbol": "BLLN",
+            "sharesOffered": "4,551,100"
+          },
+          {
+            "companyName": "Elauwit Connection, Inc.",
+            "dealID": "1347463-115165",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$15,003,000",
+            "pricedDate": "11/05/2025",
+            "proposedExchange": "NASDAQ Capital",
+            "proposedSharePrice": "9.00",
+            "proposedTickerSymbol": "ELWT",
+            "sharesOffered": "1,667,000"
+          },
+          {
+            "companyName": "Functional Brands Inc.",
+            "dealID": "1139307-112539",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "",
+            "pricedDate": "11/05/2025",
+            "proposedExchange": "NASDAQ Capital",
+            "proposedSharePrice": null,
+            "proposedTickerSymbol": "MEHA",
+            "sharesOffered": "17,883,693"
+          },
+          {
+            "companyName": "Exzeo Group, Inc.",
+            "dealID": "1185994-115466",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$168,000,000",
+            "pricedDate": "11/05/2025",
+            "proposedExchange": "NYSE",
+            "proposedSharePrice": "21.00",
+            "proposedTickerSymbol": "XZO",
+            "sharesOffered": "8,000,000"
+          },
+          {
+            "companyName": "BETA Technologies, Inc.",
+            "dealID": "1153187-115515",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$1,014,999,994",
+            "pricedDate": "11/04/2025",
+            "proposedExchange": "NYSE",
+            "proposedSharePrice": "34.00",
+            "proposedTickerSymbol": "BETA",
+            "sharesOffered": "29,852,941"
+          },
+          {
+            "companyName": "Cantor Equity Partners V, Inc.",
+            "dealID": "1345929-114999",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$220,000,000",
+            "pricedDate": "11/04/2025",
+            "proposedExchange": "NASDAQ Global",
+            "proposedSharePrice": "10.00",
+            "proposedTickerSymbol": "CEPV",
+            "sharesOffered": "22,000,000"
+          },
+          {
+            "companyName": "Westin Acquisition Corp",
+            "dealID": "1343167-114669",
+            "dealStatus": "Priced",
+            "dollarValueOfSharesOffered": "$50,000,000",
+            "pricedDate": "11/04/2025",
+            "proposedExchange": "NASDAQ Capital",
+            "proposedSharePrice": "10.00",
+            "proposedTickerSymbol": "WSTNU",
+            "sharesOffered": "5,000,000"
           }
         ]
       },
-      "totalResults": 1,
+      "totalResults": 18,
       "upcoming": {
-        "lastUpdatedTime": "LAST UPDATED: 09/25/2025* - Source: EDGAR® Online",
+        "lastUpdatedTime": "LAST UPDATED: 11/13/2025* - Source: EDGAR® Online",
         "upcomingTable": {
           "asOf": null,
           "headers": {
@@ -690,120 +357,67 @@
           },
           "rows": [
             {
-              "companyName": "DT House Ltd",
-              "dealID": "1326992-113193",
-              "dollarValueOfSharesOffered": "$11,500,000",
-              "expectedPriceDate": "9/30/2025",
+              "companyName": "Libera Gaming Operations, Inc",
+              "dealID": "1289808-109456",
+              "dollarValueOfSharesOffered": "$8,625,000",
+              "expectedPriceDate": "11/21/2025",
               "proposedExchange": "NASDAQ Capital",
-              "proposedSharePrice": "4.00-5.00",
-              "proposedTickerSymbol": "DTDT",
-              "sharesOffered": "2,000,000"
+              "proposedSharePrice": "4.00-6.00",
+              "proposedTickerSymbol": "LBRJ",
+              "sharesOffered": "1,250,000"
             },
             {
-              "companyName": "Rise Smart Group Holdings Ltd",
-              "dealID": "1296105-110127",
-              "dollarValueOfSharesOffered": "$8,280,000",
-              "expectedPriceDate": "9/26/2025",
-              "proposedExchange": "NASDAQ Capital",
-              "proposedSharePrice": "4.00",
-              "proposedTickerSymbol": "RSHL",
-              "sharesOffered": "1,800,000"
+              "companyName": "Central Bancompany, Inc.",
+              "dealID": "1352502-115662",
+              "dollarValueOfSharesOffered": "$490,672,800",
+              "expectedPriceDate": "11/20/2025",
+              "proposedExchange": "NASDAQ Global Select",
+              "proposedSharePrice": "21.00-24.00",
+              "proposedTickerSymbol": "CBC",
+              "sharesOffered": "17,778,000"
             }
           ]
         }
       },
       "withdrawn": {
         "asOf": null,
-        "headers": {
-          "companyName": "Company Name",
-          "dollarValueOfSharesOffered": "Offer Amount",
-          "filedDate": "Date Filed",
-          "proposedExchange": "Exchange/ Market",
-          "proposedTickerSymbol": "Symbol",
-          "sharesOffered": "Shares",
-          "withdrawDate": "Date Withdrawn"
-        },
-        "rows": [
-          {
-            "companyName": "Elite Performance Holding Corp",
-            "dealID": "1065707-111774",
-            "dollarValueOfSharesOffered": "$7,475,000",
-            "filedDate": "10/21/2024",
-            "proposedExchange": null,
-            "proposedTickerSymbol": null,
-            "sharesOffered": "1,625,000",
-            "withdrawDate": "9/15/2025"
-          }
-        ]
+        "headers": null,
+        "rows": null
       },
       "year": 2025
     },
     "message": null,
     "status": {
-      "bCodeMessage": null,
+      "bCodeMessage": [
+        {
+          "code": 1002,
+          "errorMessage": "Withdrawn:No record found."
+        }
+      ],
       "developerMessage": null,
       "rCode": 200
     }
   },
-  "2025-10": {
+  "2025-12": {
     "data": {
       "filed": {
         "asOf": null,
         "headers": null,
         "rows": null
       },
-      "month": 10,
+      "month": 12,
       "priced": {
         "asOf": null,
         "headers": null,
         "rows": null
       },
-      "totalResults": 3,
+      "totalResults": 0,
       "upcoming": {
-        "lastUpdatedTime": "LAST UPDATED: 09/25/2025* - Source: EDGAR® Online",
+        "lastUpdatedTime": "LAST UPDATED: 11/13/2025* - Source: EDGAR® Online",
         "upcomingTable": {
           "asOf": null,
-          "headers": {
-            "companyName": "Company Name",
-            "dollarValueOfSharesOffered": "Offer Amount",
-            "expectedPriceDate": "Expected IPO Date",
-            "proposedExchange": "Exchange/ Market",
-            "proposedSharePrice": "Price",
-            "proposedTickerSymbol": "Symbol",
-            "sharesOffered": "Shares"
-          },
-          "rows": [
-            {
-              "companyName": "HW Electro Co., Ltd.",
-              "dealID": "1276213-113897",
-              "dollarValueOfSharesOffered": "$19,090,000",
-              "expectedPriceDate": "10/16/2025",
-              "proposedExchange": "NASDAQ Capital",
-              "proposedSharePrice": "4.00",
-              "proposedTickerSymbol": "HWEP",
-              "sharesOffered": "4,150,000"
-            },
-            {
-              "companyName": "Fermi LLC",
-              "dealID": "1348115-115241",
-              "dollarValueOfSharesOffered": "$632,500,000",
-              "expectedPriceDate": "10/01/2025",
-              "proposedExchange": "NASDAQ Global Select",
-              "proposedSharePrice": "18.00-22.00",
-              "proposedTickerSymbol": "FRMI",
-              "sharesOffered": "25,000,000"
-            },
-            {
-              "companyName": "Neptune Insurance Holdings Inc.",
-              "dealID": "1334803-115190",
-              "dollarValueOfSharesOffered": "$423,684,200",
-              "expectedPriceDate": "10/01/2025",
-              "proposedExchange": "NYSE",
-              "proposedSharePrice": "18.00-20.00",
-              "proposedTickerSymbol": "NP",
-              "sharesOffered": "18,421,053"
-            }
-          ]
+          "headers": null,
+          "rows": null
         }
       },
       "withdrawn": {
@@ -822,6 +436,10 @@
         },
         {
           "code": 1002,
+          "errorMessage": "Upcoming:No record found."
+        },
+        {
+          "code": 1002,
           "errorMessage": "Filed:No record found."
         },
         {
@@ -833,14 +451,14 @@
       "rCode": 200
     }
   },
-  "2025-11": {
+  "2026-01": {
     "data": {
       "filed": {
         "asOf": null,
         "headers": null,
         "rows": null
       },
-      "month": 11,
+      "month": 1,
       "priced": {
         "asOf": null,
         "headers": null,
@@ -848,7 +466,7 @@
       },
       "totalResults": 0,
       "upcoming": {
-        "lastUpdatedTime": "LAST UPDATED: 09/25/2025* - Source: EDGAR® Online",
+        "lastUpdatedTime": "LAST UPDATED: 11/13/2025* - Source: EDGAR® Online",
         "upcomingTable": {
           "asOf": null,
           "headers": null,
@@ -860,7 +478,7 @@
         "headers": null,
         "rows": null
       },
-      "year": 2025
+      "year": 2026
     },
     "message": null,
     "status": {

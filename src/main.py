@@ -1,6 +1,7 @@
 from __future__ import annotations
 import logging
 from datetime import date
+import shutil
 from pathlib import Path
 from typing import List
 
@@ -16,8 +17,10 @@ from .fetch import (
 from .transform import normalize_from_json, normalize_from_html_rows, normalize_earnings_from_json
 from .build_ics import build_calendar, build_earnings_calendar, build_combined_calendar
 
-DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-DIST_DIR = Path(__file__).resolve().parent.parent / "dist"
+ROOT_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT_DIR / "data"
+DIST_DIR = ROOT_DIR / "dist"
+FUNCTIONS_DIR = ROOT_DIR / "functions"
 
 
 def unique_by_uid(items: List[IpoItem]) -> List[IpoItem]:
@@ -36,6 +39,12 @@ def main() -> int:
     configure_logging()
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     DIST_DIR.mkdir(parents=True, exist_ok=True)
+    # Ensure Pages Functions ship with the built artifacts so Cloudflare picks them up.
+    functions_dest = DIST_DIR / "functions"
+    if functions_dest.exists():
+        shutil.rmtree(functions_dest)
+    if FUNCTIONS_DIR.exists():
+        shutil.copytree(FUNCTIONS_DIR, functions_dest)
 
     session = get_http_session()
 
