@@ -82,8 +82,6 @@ Outputs:
 - `dist/all.ics` – Combined feed (IPO + Earnings). Event titles are prefixed with `[IPO]` or `[ERN]`.
 - `data/ipo.json` – latest IPO JSON snapshots (debugging)
 - `data/earnings.json` – latest Earnings JSON snapshots (debugging)
-- `data/archive/ipo/YYYY-MM-DD.json` – IPO snapshots by date
-- `data/archive/earnings/YYYY-MM-DD.json` – Earnings snapshots by date
 
 ## Notes
 - This project makes minimal requests (once/day) and sets a browser-like User-Agent.
@@ -107,12 +105,22 @@ GitHub Pages is convenient, but if you want built-in request analytics (page vie
 3. **Deploy & test**
    - Trigger an initial deployment (manual build or push) and verify the files load from `https://<project>.pages.dev/all.ics`.
 4. **Attach your subscription domain**
-   - Add a custom domain (e.g., `calendar.example.com`) in the Pages project.
-   - Create the suggested CNAME in your DNS; Cloudflare will auto-provision TLS.
-   - Update the subscription URLs in the README (and wherever else you share them) to the new domain once DNS is live.
+ - Add a custom domain (e.g., `calendar.example.com`) in the Pages project.
+  - Create the suggested CNAME in your DNS; Cloudflare will auto-provision TLS.
+  - Update the subscription URLs in the README (and wherever else you share them) to the new domain once DNS is live.
 5. **View analytics**
-   - In Cloudflare → Pages → Analytics you will see *Requests* (PV) and *Unique visitors* (UV) broken down by path.
-   - For more detail, go to Cloudflare → Websites → Analytics → Traffic and filter by hostname/path (requires the domain to be in your Cloudflare account).
-   - Optional: enable [Logpush](https://developers.cloudflare.com/logs/get-started/logpush/) for raw request logs if you need to export stats elsewhere.
+  - In Cloudflare → Pages → Analytics you will see *Requests* (PV) and *Unique visitors* (UV) broken down by path.
+  - For more detail, go to Cloudflare → Websites → Analytics → Traffic and filter by hostname/path (requires the domain to be in your Cloudflare account).
+  - Optional: enable [Logpush](https://developers.cloudflare.com/logs/get-started/logpush/) for raw request logs if you need to export stats elsewhere.
+
+### Tracking ICS fetches with a Pages Functions middleware
+
+Cloudflare Web Analytics only injects its JavaScript beacon into valid HTML responses, so direct `.ics` downloads do not show up in PV/UV dashboards. The repo includes a lightweight Pages Functions middleware (`functions/_middleware.js`) that writes each `.ics` request to an [Analytics Engine](https://developers.cloudflare.com/pages/functions/bindings) dataset so you can still see per-feed traffic.
+
+1. Create a dataset (for example `ics_requests`) from the Cloudflare dashboard (Workers & Pages ➜ Analytics Engine ➜ Create dataset).
+2. Bind that dataset to your Pages project as `ICS_ANALYTICS` (Pages dashboard ➜ Functions ➜ Analytics Engine bindings).
+3. Deploy the site. Every request for `/all.ics`, `/ipo.ics`, or `/earnings.ics` will now trigger a write that includes the path, referer, hashed IP/UA combo (for UV approximation), and country code. You can explore the dataset with the Workers Analytics API or export it for downstream reporting.
+
+If you do not need the middleware simply omit the binding; the function is a no-op unless `ICS_ANALYTICS` is configured.
 
 Cloudflare Pages keeps the ICS hosting static and cache-friendly, while the dashboard gives you PV/UV numbers so you can understand how many people subscribe to each feed. No application code changes are required—only the hosting layer changes.

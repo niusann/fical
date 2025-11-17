@@ -1,0 +1,5 @@
+{
+    "analytics_engine_datasets": [
+      { "binding": "ics_requests", "dataset": "ics_requests" }
+    ]
+  }
