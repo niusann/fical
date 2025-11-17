@@ -4,20 +4,23 @@ Generates iCalendar (ICS) feeds of Nasdaq IPOs and Earnings and publishes them d
 
 ## Subscription URLs
 
-Published via a public feed repo:
+access them via cf pages
+
+### Combined feed
+```
+https://fical.pages.dev/all.ics       
+```
 
 ### IPO-only feed
+
 ```
-https://niusann.github.io/fical/ipo.ics      
+https://fical.pages.dev/ipo.ics      
 ```
 ### Earnings-only feed
 ```
-https://niusann.github.io/fical/earnings.ics  
+https://fical.pages.dev/earnings.ics  
 ```
-### Combined feed
-```
-https://niusann.github.io/fical/all.ics       
-```
+
 
 Subscribe to either or both in Google Calendar, Apple Calendar, or Outlook.
 
@@ -28,7 +31,7 @@ Choose one or more of the subscription URLs above and add them to your calendar 
 - Google Calendar (Web)
   1. Open Google Calendar in a browser.
   2. In the left sidebar, next to "Other calendars", click the "+" button ➜ "From URL".
-  3. Paste the desired `.ics` URL (e.g., `https://niusann.github.io/fical/all.ics`) and click "Add calendar".
+  3. Paste the desired `.ics` URL (e.g., `https://fical.pages.dev/all.ics`) and click "Add calendar".
   4. Google refresh cadence is controlled by Google and may take several hours; changes can take up to 24 hours to appear.
 
 - Apple Calendar (macOS)
@@ -87,3 +90,29 @@ Outputs:
 - IPO: if the JSON API is blocked, the job falls back to best-effort HTML parsing.
 - Earnings: monthly API can reject date-only queries; we fallback to per-day queries.
 - Events without a concrete date are skipped to avoid noisy TBD items; Earnings `time` may appear as `BMO`, `AMC`, or `TBD` in the description.
+
+## Cloudflare deployment & PV/UV analytics
+
+GitHub Pages is convenient, but if you want built-in request analytics (page views/unique visitors) for the subscription URLs you can deploy the static `dist/*.ics` files to [Cloudflare Pages](https://developers.cloudflare.com/pages/). Cloudflare automatically records per-path request counts and unique visitors for anything it serves, so you get PV/UV numbers for `ipo.ics`, `earnings.ics`, etc. without changing the Python generator.
+
+1. **Create the Pages project**
+   - In Cloudflare, create a new Pages project and connect it to this GitHub repository.
+   - Pick the `master` branch so the scheduled GitHub Action continues to trigger builds every time it pushes new `dist/*.ics`.
+2. **Configure the build**
+   - Set the build command to something like  
+     `bash -c "pip install -r requirements.txt && python -m src.main"`  
+     which installs dependencies and regenerates the ICS files.
+   - Set the output directory to `dist` so Pages serves `dist/ipo.ics`, `dist/earnings.ics`, and `dist/all.ics`.
+   - Leave the root directory empty unless you mirror this repo in a subfolder.
+3. **Deploy & test**
+   - Trigger an initial deployment (manual build or push) and verify the files load from `https://<project>.pages.dev/all.ics`.
+4. **Attach your subscription domain**
+   - Add a custom domain (e.g., `calendar.example.com`) in the Pages project.
+   - Create the suggested CNAME in your DNS; Cloudflare will auto-provision TLS.
+   - Update the subscription URLs in the README (and wherever else you share them) to the new domain once DNS is live.
+5. **View analytics**
+   - In Cloudflare → Pages → Analytics you will see *Requests* (PV) and *Unique visitors* (UV) broken down by path.
+   - For more detail, go to Cloudflare → Websites → Analytics → Traffic and filter by hostname/path (requires the domain to be in your Cloudflare account).
+   - Optional: enable [Logpush](https://developers.cloudflare.com/logs/get-started/logpush/) for raw request logs if you need to export stats elsewhere.
+
+Cloudflare Pages keeps the ICS hosting static and cache-friendly, while the dashboard gives you PV/UV numbers so you can understand how many people subscribe to each feed. No application code changes are required—only the hosting layer changes.
